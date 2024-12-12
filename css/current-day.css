@@ -1,0 +1,39 @@
+#current-day-info {
+    width: 34%;                             /*整個網頁的佔比*/
+    min-height: 100vh;                      /*最小高度 100view height: 代表高度要橫跨整個頁面 */
+  }
+  #current-day-info #app-name-landscape {   /*代表day-info裡面的app-name-landscape*/
+    font-size: 6.2vh;                       /*當視窗有伸縮時，字體會自動縮放*/       
+    padding: 9vh 0 1vh;                     /*本身設定框架往內縮 padding:10px(上) 10px(右) 10px(下) 10px(左)*/
+    border-bottom:  1px solid;              /*設定底線 粗度實線*/
+  }
+  #current-day-info h2 {
+    font-size: 6vh;           /*字體大小*/
+    font-weight: 300;         /*字體粗細度*/
+    margin: 0 0 3vh;          /*0(上) 0(左右) 3vh(下),有四種寫法 margin: 5px(上) 5px(右) 5px(下) 5px(左)*/
+    padding: 3vh;             /*上下左右都往內縮3vh*/
+  }
+  #current-day-info h1 {
+    font-size: 6.8vh;         /*字體大小*/
+    font-weight: 600;         /*字體粗細度*/
+    margin: 4vh 0;            /*4vh(上下) 0(左右)*/
+  }
+  #current-day-info #theme-landscape {    /*代表day-info裡面的theme-landscape*/
+      display: block;
+      padding: 1.8vh 4.2vh;             /*1.8vh(上下) 4.2vh(左右)*/
+      color: #FEFDFD;                 /*前景色*/
+      border: 3px solid #FEFDFD;      /*外匡線粗度,顏色*/
+      font-size: 2.4vh;                 /*字體大小*/
+  }
+  #current-day-info #theme-landscape:hover {   /*hover 代表滑鼠移到上方時會有動態效果*/
+      background-color: white;                /*背景色*/
+      opacity: 0.5;                             /*整個透光度*/
+      color: black;                           /*字體顏色*/
+  }
+  
+  @media (orientation: landscape){              /*改變current-day-info 頁面裁切 https://bennettfeely.com/clippy/*/
+    #current-day-info{
+      clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    }
+  }
+  

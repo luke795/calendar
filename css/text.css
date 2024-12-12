@@ -1,0 +1,52 @@
+/*把需要的字體import進來*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:\
+ital,wght@0,100..700;1,100..700&family=Yuji+Mai&display=swap');
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  background-color: #FEFDFD;
+  display : flex;;
+  align-items: stretch;                 /*會直接把你的排版延展至最大*/
+}
+
+/* font 放在 button 設定裡面, 因為button 不會隨著body 設定改變，所以需要另外設定字體  */
+
+.font {                 
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.default-cursor {    /*游標設定,可以改變滑鼠設定: default 預設*/
+  cursor: default;
+}
+.center {
+  text-align: center;    /* 字體置中 */
+}
+
+sup {
+ font-size: 30%;
+}
+
+table, td, th{
+  border: 1px solid #9c9c9c;
+}
+
+.button{         
+  border-radius: 500px;   /* 周圍圓弧狀 */
+  outline: none;          /* 周圍的輪廓線 */
+  margin: 0 auto;         /* auto 自動調整(置中).有四種寫法 margin: 5px(上) 5px(右) 5px(下) 5px(左)   */
+  background-color: Transparent;
+}
+.color {
+  color: #FEFDFD;                          /*前景色*/
+  background-color: #1B19CD;               /*背景色*/
+}
+.border-color{                               /*邊線的顏色 */
+  border-color:  #1B19CD;
+}
+
+.off-color {
+  color: #7c7EFB;
+}
+

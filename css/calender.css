@@ -1,0 +1,125 @@
+/* 以下是右邊table calender 的css*/
+table {
+    margin: 14px auto;                        /*上右下左 都14px 自動調整*/
+    padding: 7vh 0;                           /*7vh(上下) 0(左右) 內縮*/
+    border-collapse: collapse;                /*把表格外匡線處理後只剩下一條線*/
+  }
+  table, td, th{
+    border: 1px solid #605757;              /*tabel 下方表格的匡線顏色*/
+  }
+    #calendar {
+      width: 66%;                             /*佔整個頁面66%*/
+      min-height: 100vh;                      /*整個頁面高度100view height*/
+      display: flex;                          /*排版方式是橫向排列,預設是row*/                          
+      align-items: center;                    /*項目置中*/
+      flex-direction: column;                 /*在calendar 裡面的div是用column排列*/
+      justify-content: space-around;          /*項目是平均分配空間*/
+    }
+    #calendar #app-name-portrait {
+      display: none;                          /*display:none是將這個區塊不顯示*/
+    }
+    #calendar #theme-portrait {
+      display: none;                          /*display:none是將這個區塊不顯示*/
+                                              /*app-name-portrait & theme-portrait 這2個div是用在直式的畫面上,未進入直式方向時,不顯示。*/
+    }
+    #calendar thead tr:first-child th div {   /*在月曆表格裏的thead中有2 個tr, tr:first-child是指2個tr中的第1個tr*/
+      display: flex;                          /*排版方式是橫向排列,預設是row,給 <箭頭 月份 箭頭>*/
+      align-items: center;                    /*項目置中*/
+      justify-content: center;                /*項目是平均分配空間*/
+    }
+    #calendar h4 {
+      margin: 0;                              /*無設定*/
+      padding: 0.8vw 0 0.2vw;                 /*0.8view width(上) 0(右左) 0.2view width(下)*/
+      font-size: 1.4vw;                       /*字體大小*/
+      font-weight: 300;                       /*字體粗細*/
+    }
+    #calendar h3 {
+      margin: 0;                              /*無設定*/
+      padding: 0 2vw;                         /*0(上下) 2vw(右左)*/
+      font-size: 2vw;                         /*2veiw width 字體大小*/
+      font-weight: 700;                       /*字體粗細*/
+      display: inline-block;                  /*可以在文字中跑出一個區塊*/
+    }
+    #calendar .weekday {
+      font-size: 1.7vw;                       /*字體大小*/
+      font-weight: 300;                       /*字體粗細*/
+      padding: 8px 0 5px;                     /*8px(上) 0(右左) 5px(下) 內縮*/
+      border-bottom: 1px solid white !important;    /*important 限制子元素不能覆寫此css格式設定*/  /*border bottom 下方底線*/
+    }
+  
+    #calendar tbody td {
+      height: 5.2vw;                          /*td 方格裡面的高度*/
+      width: 5.2vw;                           /*td 方格裡面的寬度*/
+      font-size: 0.8vw;                       /*字體大小*/
+      font-weight: 600;                       /*字體粗細*/  
+      vertical-align: top;                    /*垂直方向對齊：向上*/
+      padding: 0.5vw;                         /*0.5view width 內縮*/
+      transition: font-size .6s ease;      /*滑鼠移到元素上方時轉場的方式：font-size從0.8vw轉換到1.2vw，在0.6s內完成。轉場模式：ease*/
+    }
+    #calendar tbody td:hover {
+      font-size:  1.2vw;
+    }
+
+    #calendar img {
+      width: 3.8vw;
+      vertical-align: top;
+      position: relative;
+      top: 0.5vw;
+      /* left: 12px; */
+  }
+
+  
+  
+  .background-text {
+      position: absolute;                   /*absolute; 宣告目前這個區塊在上層標籤元素的絕對位置*/
+      opacity: 0.1;                        /*透明度*/                     
+      font-size: 20vw;                      /*字體大小*/
+      z-index: -1;                          /*文字區塊保持在最下層*/
+      margin: 0;                            /*沒有設定*/
+      top: 50%;                             /*top: 50%; left: 56%; 父元素離上方與左方的距離設置*/
+      left: 56%;                            /*top: 50%; left: 56%; 父元素離上方與左方的距離設置*/
+      transform: translate(-50%, -50%);     /*translate(-50%, -50%); 向 x 軸移動-50%距離，Y 軸移動 -50%距離*/
+  }
+  h4.background-text {
+      top: 90%;                             
+      font-size: 7vw;                       
+  }
+  
+  #calendar .icon{                          /*把icon圖案變大*/
+      font-size:2vw;
+  }
+  
+  #calendar .icon:hover{                    /*icon圖案移過去的時候會變淡*/
+    opacity:0.6;   
+  }
+
+  #calendar #current-day {                  /*這個是日曆裡面，今天日期會有底色的設定*/
+    background-color: #E1E1E1;
+  }
+
+
+#calendar tbody tr td[class*="color"] {
+    border-right: 1px solid white;
+}
+#calendar tbody tr td[class*="color"]:first-child {
+    border-left-color: inherit;
+}
+ #calendar tbody tr td[class*="color"]:last-child {
+    border-right-color: inherit;
+}
+#calendar tbody tr:last-child td[class*="color"] {
+    border-bottom-color: inherit;
+}
+#calendar tbody tr:nth-child(5) td[class*="color"] {
+    border-bottom-color: white;
+}
+#calendar tbody tr td[class*="prev-month-last-day"] {
+    border-right: 1px solid #9C9C9C !important;
+}
+
+#calendar .weekday {
+  font-size: 1.7vw;
+  font-weight: 300;
+  padding: 8px 0 5px;
+  border-bottom: 1px solid white !important;
+}

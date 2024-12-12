@@ -1,0 +1,289 @@
+dialog {                                  /*新增視窗會變暗的設定*/
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background-color: rgba(29, 29, 29, 0.85);
+    position: fixed;
+  }
+  
+  .popup {                                  /*新增視窗會變暗的設定 並且彈出*/
+    position: absolute;                     /*絕對位置*/
+    display: flex;                          /*排版方式是橫向排列,預設是row*/  
+    flex-direction: column;                 /*這個區塊是用垂直排列*/
+    align-items: center;                    /*置中*/
+    width: 50vw;                            /*整個方塊的寬度*/
+    margin: 0 auto;                         /*自動設定*/
+    background-color: #FEFDFD;            /*背景白色*/
+    border-radius: 10px;                    /*方塊角邊弧度*/
+    top: 50%;                               /*與上方位置*/
+    left: 50%;                              /*與下方位置*/
+    transform: translate(-50%, -50%);       /*translate(-50%, -50%); 向 x 軸移動-50%距離，Y 軸移動 -50%距離*/
+  }
+  
+  #fav-color h4 {                           /*彈出視窗標題字的設定*/
+    margin: 32px 0 18px;                    /*32px(上) 0(右左) 18px(下)*/
+    font-size: calc(12px + 1.6vw);          /*calc 計算字體大小，最小12px*/
+    font-weight: 300;                       /*字體粗細*/
+    padding: 0 2vw 2px;                     /*0(上) 2vw(右左) 2px(下)*/
+    border-bottom: 3px solid #222;        /*bottom line 的設定*/
+  }
+  
+  #fav-color h4 {
+    margin: 32px 0 18px;
+    font-size: calc(12px + 1.6vw);
+    font-weight: 300;
+    padding: 0 2vw 2px;
+    border-bottom: 1px solid #222;
+  }
+  #fav-color #color-options {
+    width: 84%;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: row;                
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #fav-color #color-options h5 {
+    margin: 8px 0 12px;
+    font-size: calc(6px + 0.6vw);
+    font-weight: 500;
+  }
+  #fav-color #color-options .color-option {
+    margin: 0.4vw;
+    width: 6vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #fav-color #color-options .color-preview {
+    width: calc(16px + 1.7vw);
+    height: calc(16px + 1.7vw);
+    padding: 0;
+    border-radius: 100%;
+    display: flex;    
+    /* 依據交叉軸(縱)置中對齊 */
+    align-items: center;   
+    /* 依據主軸(橫)置中對齊 */
+    justify-content: center;
+  }
+  
+  #fav-color #update-theme-button {
+    margin: 24px 20px 20px;
+    padding: 10px 26px;
+    font-size: calc(8px + 0.6vw);
+    font-weight: 400;
+    border: 3px solid #222;
+  }
+  #fav-color #update-theme-button:hover {
+    color: white;
+    background-color: #222;
+  }
+  
+  #fav-color #color-options .checkmark {          /*跳出視窗內的白色小勾勾*/
+    color: white;
+    font-size: 1.2vw;
+  }
+  
+  
+  #make-note h4 {                                 /*跳出視窗的標題*/
+    margin: 32px 0 18px;
+    font-size: calc(16px + 1.6vw);
+    font-weight: 300;
+  }
+  #make-note #edit-post-it {                      /*視窗打字的部分*/
+    height: 340px;
+    width: 42vw;
+    font-size: 2.6vw;
+    padding: 14px;
+    border: 1px solid #D8D8D8;                  /*視窗打字的部分的外匡線*/
+    border-radius: 10px;                          /*視窗打字的部分外誆弧度*/
+    outline: none;                                
+    resize: none;
+  }
+  
+  #make-note .post-it-button {                    /*視窗下面兩顆按鈕*/
+    display: inline;                              /*按鈕顯示水平排列呈現*/
+    margin: 24px 0 20px;                          /*24px(上) 0(右左) 20px(下)*/
+    padding: 10px 26px;                           /*10px(上下) 26px(右左)*/
+    font-size: calc(12px + 0.6vw);                /*字體大小會自行運算,最小12px*/
+    font-weight: 400;
+  }
+  #make-note #add-post-it {                       /*post it 外匡線*/
+    border: 3px solid #222;
+  }
+  #make-note #add-post-it:hover {                 /*post it 鼠標移過去後會產生動態效果*/
+    color: white;
+    background-color: #222;
+  }
+  #make-note #delete-button {                     /*delete-button 外匡線 背景 前景色*/
+    border: 3px solid #D71C1F;
+    background-color: #D71C1F;
+    color: white;
+  }
+  #make-note #delete-button:hover {               /*delete button 鼠標移過去後會產生動態效果*/
+    background-color: white;
+    color: #D71C1F;
+  }
+  
+  
+  /*  手機/平板並無滑鼠,在一些行動裝置上,我們先前針對重點提示的hover動作(tooltip)
+  ,當物件被點擊時,也會觸發hover效果,因此,為了避免此種問題,可將tootltip的hover
+  設定放在landscape模式中  */
+  
+  @media (orientation:landscape) {
+  .tooltip:hover {
+      cursor: help;
+      position: relative;
+    }
+  .tooltip:hover span {
+      display: block;
+      font-size: 1vw;
+      padding: 6px;
+      white-space: pre-wrap;
+      width: 12vw;
+      z-index: 100;
+      background-color: #EDEDED;
+      color: black;
+      border-radius: 6px;
+      left: 2vw;
+      top: 4vw;
+      position: absolute;
+    }
+  }
+  
+  
+  
+  /*響應式處理,若是平板or手機縮放的話,就需要透過以下處理方式*/
+  
+  @media (orientation: portrait) {
+    body {
+        flex-direction: column;
+    }
+  
+    /*左邊的響應式處理*/
+    
+    
+    #current-day-info {
+        width: 100%;
+        min-height: initial;
+        height: 12vh;
+        padding: 1vw 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #current-day-info h2 {
+        font-size: 6vw;
+    }
+    #current-day-info h1 {
+        font-size: 7vw;
+    }
+    #current-day-info #app-name-landscape {
+        display: none;
+    }
+    #current-day-info #theme-landscape {
+        display: none;
+    }
+    #current-day-info .current-day-heading {
+        display: inline;
+        padding: 0;
+        margin: 0 4px;
+    }        
+  
+  
+  /* 月曆的響應式處理 */
+  
+  #calendar {
+    width: 100%;
+    display: block;
+    margin-top: 3.6vh;
+  }
+  #calendar #app-name-portrait {
+    display: block;
+    margin: 0;
+    font-size: 3.5vh;
+  }
+  #calendar h4 {
+    padding: 1.2vw 0 0.2vw;
+    font-size: 2.8vw;
+  }
+  #calendar h3 {
+    font-size: 3.8vw;
+    padding: 1.4vw 2vw 0.8vw;
+  }
+  #calendar .icon {
+    font-size: 2.9vw;
+  }
+  #calendar .weekday {
+    font-size: 2.5vw;
+  }
+  #calendar tbody td {
+    height: 9.8vw;
+    width: 9.8vw;
+    font-size: 1.6vw;
+    padding: 0.8vw;
+  }
+  #calendar img {
+    width: 0.1vw;
+    top: 0.7vw;
+  }
+  #calendar #theme-portrait {
+    display: block;
+    padding: 3vw 26.5vw;
+    font-size: 4vw;
+    margin-top: 2vh;
+    border: none;
+  }        
+  
+  .popup {                                /*在RWD裡面,popup 會調整彈出視窗大小*/
+    width: 80vw; 
+  } 
+  #fav-color #color-options .color-option {      /*調整視窗的時候，會依據視窗大小調整項目寬度*/
+    width: 15vw; 
+  } 
+  #fav-color #update-theme-button {           /*處理螢幕縮放時的按鈕設定*/
+    padding: 6px 10px; border-width: 2px;
+  } 
+  #fav-color #color-options .checkmark {      /*處理螢幕縮放時的小勾勾設定*/
+    font-size: 1.2vh 
+  }
+  #make-note #edit-post-it {                  /*要留言的框框大小設定*/
+    width: 62vw; 
+    height: 24vh; 
+    font-size: 4vh; 
+  }
+  
+  }
+
+  .fade-in{
+    animation-name: fade=in;
+    animation-duration:0.8s;
+    animation-timing-function:ease-out;
+  }
+  .fade-out{
+    animation-name:fade-out;
+    animation-duration:0.8s;
+    animation-timing-function:ease-out;
+  }
+  @keyframes fade-in{
+    0% {
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+    }
+  }
+  @keyframes fade-out{
+    0%{
+      opacity:1;
+    }
+    100%{
+      opacity:0;
+    }
+  }
+
+
+  
